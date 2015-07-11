@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tinstuk</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=0.9">
+</head>
+<body>
+<% if !current_page?(root_path) %>
+  <%= render "layouts/header" %>
+<% else %>
+  <a href="#" class="navbar-brand">
+    <%= image_tag "logo_white.png", alt: "Tinstuk Logo", class: "logo-brand" %>
+  </a>
+<% end %>
+<%= yield %>
+
+</body>
+</html>
